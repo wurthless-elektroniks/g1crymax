@@ -48,16 +48,19 @@ a variable resistor and a zener are added to the circuit for finer control over 
 
 ## Bill of Materials
 
-**Gerbers yet to be finalized**
+There are two zips in the gerbs/ directory. One is "g1 crymax.zip", which contains space for the potentiometer and potential divider circuits.
+The other is "g1 crymax lite.zip", which only implements the basic circuit. **The Gerbers are still a work in progress and these PCBs are not tested yet.**
 
 The basic circuit consists of:
 
-* R3: 1M ohm pullup resistor
-* R4: 620 ohm current limiting resistor
-* C1: Any cap works here (*as long as it's within tolerance of the voltage applied to it!*), but 250V 1uF is the standard
-* D1: Plain ol' 1 amp general purpose diode
+* R3: 1M ohm pullup resistor (SMD 2512)
+* R4: 620 ohm current limiting resistor (SMD 2512)
+* C1: Any cap works here (*as long as it's within tolerance of the voltage applied to it!*), but 250V 1uF is the standard (SMD 1812)
+* D1: Plain ol' 1 amp general purpose diode (SMC package)
 
 Optionally, you can add a potential divider across R1 and R2. **Be careful when selecting resistors and potentiometers! The circuit's only designed for half-watt resistors.** However, the G1 pin will only draw current on the order of microamps, so you can use lower wattage resistors if you're feeling lucky.
+
+Components are beefy to add lots of tolerance and to make it easier to solder. Boards are designed with a minimum clearance of 1.25mm.
 
 ## Installation procedure
 
