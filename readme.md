@@ -73,7 +73,7 @@ Optionally, you can add a potential divider across R1 and R2. **Be careful when 
 
 If you don't have an oscilloscope (which accurately describes 90% of electronics hobbyists), you can probe for negative voltages with a capacitor and diode. Here's how to do it:
 
-![](probe.png)
+![](probe.jpg)
 
 Further resources to check:
 * The [HR Diemen database](https://www.hrdiemen.com/search/index) lists many CRT displays and their flybacks. You might be able to find some useful info here, but don't count on it because **the HR Diemen database is known to be horribly wrong**.
