@@ -44,7 +44,7 @@ a variable resistor and a zener are added to the circuit for finer control over 
 
 ## Schematic
 
-!()[schematic.png]
+![](schematic.png)
 
 ## Bill of Materials
 
@@ -72,7 +72,7 @@ Optionally, you can add a potential divider across R1 and R2. **Be careful when 
 7. Power up monitor, then calibrate G1, SCREEN and FOCUS. Colors might not need recalibration, but do that if you want to.
 
 Further resources to check:
-* The (HR Diemen database)[https://www.hrdiemen.com/search/index] lists many CRT displays and their flybacks. You might be able to find some useful info here, but don't count on it because **the HR Diemen database is known to be horribly wrong**.
+* The [HR Diemen database](https://www.hrdiemen.com/search/index) lists many CRT displays and their flybacks. You might be able to find some useful info here, but don't count on it because **the HR Diemen database is known to be horribly wrong**.
 * The [Tubular database](https://tubular.atomized.org) contains a wealth of information on tubes and, more importantly, the safe operating G1 voltage limits. **When in doubt, do not go past -50VDC.**
 
 ## Example installations
@@ -87,4 +87,4 @@ What, you think I could possibly claim copyright for a fucking resistor divider?
 
 ## Actual schematic
 
-!()[realschematic.png]
+![](realschematic.png)
