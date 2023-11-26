@@ -1,0 +1,20 @@
+G1 Crymax install log for JVC AV-20921, chassis rev. A66
+
+HR Diemen results:
+HR DIEMEN PINOUT DOES NOT MATCH ACTUAL PINOUT
+
+CRT is a JVC model A51KRE89X
+Tubular database has no entry
+Assuming -50VDC is the safe maximum G1 voltage
+
+Pinout of transformer, measured with diode with cathode pointing towards positive and smoothing capacitor:
+
+1 ABL (n/a)
+2 NC (measured approx -8 VDC) 
+3 HB (measured approx -28 VDC)
+
+Used HB voltage without voltage divider
+
+Measured -25VDC at G1 pin while set in operation
+
+Job done
