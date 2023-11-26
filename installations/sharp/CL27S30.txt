@@ -1,0 +1,36 @@
+G1 Crymax install log for Sharp CL27S30, chassis rev. unknown
+
+HR Diemen results:
+Not found
+
+Google turns up no results for freely available service manual
+
+Tube is a Thomson A68ADT25X-06
+Tubular returns a datasheet but no info on safe G1 voltage
+Assuming -50VDC
+
+
+CRT Pin 5 is G1
+G1 is grounded
+Nearby G2 pin is tied to same ground trace via a class-Y cap or somesuch
+
+Jungle chip for future reference is a IX3253CE
+Blanking = pin 14
+Red in = pin 15
+Green in = pin 16
+Blue in = pin 17
+
+Flyback pinout on silkscreen provides no useful information
+
+Pin 11 is probably B+
+Pin 12 is switched by HOT
+Pins 2 and 4 appear to be ground
+
+With capacitor/diode pointing positive end towards ground:
+Pin 1 - approx. -31VDC
+Pin 3 - approx. -3VDC
+
+Pin 1 will work fine
+Resistor divider not required
+
+Job done
