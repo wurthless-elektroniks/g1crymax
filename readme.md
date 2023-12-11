@@ -2,7 +2,8 @@
 
 This circuit is a general purpose mod for CRT displays, allowing negative voltages to be applied to the G1 pin to help
 fine-tune the display's brightness and sharpness, especially when used with a tube that wasn't intended for use with
-that specific design.
+that specific design. It also has the bonus of improving picture quality on consumer-level CRT televisions even over
+composite.
 
 This, of course, is a fancy way of saying "here's my shitty amateurish take on a circuit that every CRT hobbyist has built already".
 
@@ -46,6 +47,10 @@ a variable resistor and a zener are added to the circuit for finer control over 
 
 ![](schematic.png)
 
+Fairly straightforward circuit. We pick a pin on the flyback that outputs a suitable negative voltage and route it to VNEG. In the simplest case,
+a blocking diode between VNEG and ground keeps the voltage we'll feed to the capacitor at a negative level, and C1 will stabilize it. R3 acts as a
+discharge resistor, but also provides a current back to ground in case VNEG is disconnected for any reason.
+
 ## Bill of Materials
 
 There are two zips in the gerbs/ directory. One is "g1 crymax.zip", which contains space for the potentiometer and potential divider circuits.
@@ -58,21 +63,20 @@ The basic circuit consists of:
 * C1: Any cap works here (*as long as it's within tolerance of the voltage applied to it!*), but 250V 1uF is the standard (SMD 1812)
 * D1: Plain ol' 1 amp general purpose diode (SMC package)
 
-Optionally, you can add a potential divider across R1 and R2. **Be careful when selecting resistors and potentiometers! The circuit's only designed for half-watt resistors.** However, the G1 pin will only draw current on the order of microamps, so you can use lower wattage resistors if you're feeling lucky.
+Optionally, you can add a potential divider across R1 and R2 (both SMD 2512s). However, most TVs will output voltages that won't need a potential divider, so g1 crymax lite is your best bet.
 
-Components are beefy to add lots of tolerance and to make it easier to solder. Boards are designed with a minimum clearance of 1.25mm.
+**Remember to select your components with tolerances in mind!**
 
 ## Installation procedure
 
 **BEFORE YOU TRY THIS MOD:** If your display has the usual geometry or color bleeding issues, make sure to recap the appropriate circuits and/or recalibrate convergence. This mod won't do anything to fix those issues, although it will improve picture quality.
 
 1. Open your display and look at the neckboard. If the G1 pin isn't going to ground, then your display already feeds negative voltage to G1 and there's no point doing this mod.
-2. Assemble the basic circuit (D1/R4/R3/C1) and connect GND to whichever pin on the flyback is ground.
-3. **Being extremely careful not to cause kabooms or kill yourself**, connect VR_RETURN to pins on the flyback that aren't the heater feed or B+, and measure the resulting voltage between G1 and ground. When you see a decent negative voltage in range, note it.
-4. If the voltage needs to be dropped, populate resistors on R1 and R2 to form a potential divider.
-5. If you want to use a potentiometer, then connect VR_SEND and VR_RETURN as appropriate.
-6. Cut the G1 lead on the neckboard and route your new G1 feed to it. Route other wires as necessary.
-7. Power up monitor, then calibrate G1, SCREEN and FOCUS. Colors might not need recalibration, but do that if you want to.
+2. Probe voltages coming off the flyback _that are not B+_ until you find something within a safe limit. If you can't find one, you'll have to use a potential divider to knock the voltage down to something usable, or generate a negative voltage some other way.
+3. Assemble the circuit from the given Gerbers and BOM listed above.
+4. Isolate the G1 pin from ground by cutting the board with an Inexacto Knife (i.e., boxcutter) or similar. Make sure that G1 is the only thing you isolate from ground, because other signals may be routed through that ground trace.
+5. Run wires as appropriate.
+6. Power set on, recalibrate SCREEN and FOCUS, and adjust colors if necessary.
 
 If you don't have an oscilloscope (which accurately describes 90% of electronics hobbyists), you can probe for negative voltages with a capacitor and diode. Here's how to do it:
 
