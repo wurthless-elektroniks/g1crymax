@@ -1,0 +1,24 @@
+G1 Crymax installlog for Panasonic PV-C1350W-K
+This is a 13" kitchen/"housewife" model of TV with built-in VCR
+
+HR Diemen results:
+Not found
+
+Google turned up a service manual
+
+Service manual says:
+- Press STOP/PLAY/VOL DOWN buttons for 5 seconds to enter service mode
+- Use remote control to make adjustments
+I do not have the remote control so I cannot recalibrate colors.
+
+TP551 / TP552 are said to provide approximately -20VDC; signals originate from flyback pin 1 (ABL)
+TP551 / TP552 actually measured approx -5 VDC; insufficient for our purposes
+
+Pin 8 of flyback goes to D558; tapping this yielded approx -120VDC
+Formed voltage divider with R1 = 47k and R2 = 22k
+
+Measured approx. -50VDC at G1 pin
+
+Since this is a 13" set and tests were done over RF, differences were negligible; however, it's still a success
+
+Job done

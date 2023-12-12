@@ -1,5 +1,7 @@
 # G1 negative voltage generation circuit for CRT displays
 
+![](g1crymaxlite.jpg)
+
 This circuit is a general purpose mod for CRT displays, allowing negative voltages to be applied to the G1 pin to help
 fine-tune the display's brightness and sharpness, especially when used with a tube that wasn't intended for use with
 that specific design. It also has the bonus of improving picture quality on consumer-level CRT televisions even over
@@ -40,15 +42,15 @@ directly to the G1 pin because it won't be stable (or even safe). So, it's time 
 
 This is a follow-on project to [Hatsune Mike's infamous Nanao MS9 G1 mod](https://mikejmoffitt.com/pages/ms9-hax/#g1mod), which I
 had to do to convert my Wells Gardiner WGM2775 to a MS9 chassis. The circuit it implements is roughly the same way the MS9 does it
-(if Nanao had implemented the circuit): diode, current limiting resistor, capacitor, discharge resistor. However, a potential divider,
-a variable resistor and a zener are added to the circuit for finer control over what kind of voltage is sent to the G1 pin.
+(if Nanao had implemented the circuit): diode, current limiting resistor, capacitor, discharge resistor. However, it's also possible
+to add a potential divider and potentiometer to the circuit to help fine-tune the voltages.
 
 ## Schematic
 
 ![](schematic.png)
 
 Fairly straightforward circuit. We pick a pin on the flyback that outputs a suitable negative voltage and route it to VNEG. In the simplest case,
-a blocking diode between VNEG and ground keeps the voltage we'll feed to the capacitor at a negative level, and C1 will stabilize it. R3 acts as a
+a blocking diode between VNEG and ground keeps the voltage we'll feed to the G1 pin at a negative level, and C1 will stabilize it. R3 acts as a
 discharge resistor, but also provides a current back to ground in case VNEG is disconnected for any reason.
 
 ## Bill of Materials
@@ -65,7 +67,7 @@ The basic circuit consists of:
 
 Optionally, you can add a potential divider across R1 and R2 (both SMD 2512s). However, most TVs will output voltages that won't need a potential divider, so g1 crymax lite is your best bet.
 
-**Remember to select your components with tolerances in mind!**
+**Remember to select your components with tolerances in mind!** The Gerbers use chunky components for a good reason.
 
 ## Installation procedure
 
@@ -84,7 +86,7 @@ If you don't have an oscilloscope (which accurately describes 90% of electronics
 
 Further resources to check:
 * The [HR Diemen database](https://www.hrdiemen.com/search/index) lists many CRT displays and their flybacks. You might be able to find some useful info here, but don't count on it because **the HR Diemen database is known to be horribly wrong**.
-* The [Tubular database](https://tubular.atomized.org) contains a wealth of information on tubes and, more importantly, the safe operating G1 voltage limits. **When in doubt, do not go past -50VDC.**
+* The [Tubular database](https://tubular.atomized.org) contains a wealth of information on tubes and, more importantly, the safe operating G1 voltage limits. **When in doubt, do not go past -50VDC.** It is not necessary or recommended to push the G1 voltage, as even a modest negative voltage will provide good results.
 
 ## Example installations
 
