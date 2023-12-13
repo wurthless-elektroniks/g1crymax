@@ -56,14 +56,14 @@ discharge resistor, but also provides a current back to ground in case VNEG is d
 ## Bill of Materials
 
 There are two zips in the gerbs/ directory. One is "g1 crymax.zip", which contains space for the potentiometer and potential divider circuits.
-The other is "g1 crymax lite.zip", which only implements the basic circuit. **The Gerbers are still a work in progress and these PCBs are not tested yet.**
+The other is "g1 crymax lite.zip", which only implements the basic circuit. **g1 crymax.zip has not been tested yet**; g1 crymax lite.zip is confirmed working.
 
 The basic circuit consists of:
 
 * R3: 1M ohm pullup resistor (SMD 2512)
 * R4: 620 ohm current limiting resistor (SMD 2512)
 * C1: Any cap works here (*as long as it's within tolerance of the voltage applied to it!*), but 250V 1uF is the standard (SMD 1812)
-* D1: Plain ol' 1 amp general purpose diode (SMC package)
+* D1: Plain ol' 1 amp general purpose diode (SMC package). I use Schottkys to keep the voltage drop low.
 
 Optionally, you can add a potential divider across R1 and R2 (both SMD 2512s). However, most TVs will output voltages that won't need a potential divider, so g1 crymax lite is your best bet.
 
@@ -78,11 +78,13 @@ Optionally, you can add a potential divider across R1 and R2 (both SMD 2512s). H
 3. Assemble the circuit from the given Gerbers and BOM listed above.
 4. Isolate the G1 pin from ground by cutting the board with an Inexacto Knife (i.e., boxcutter) or similar. Make sure that G1 is the only thing you isolate from ground, because other signals may be routed through that ground trace.
 5. Run wires as appropriate.
-6. Power set on, recalibrate SCREEN and FOCUS, and adjust colors if necessary.
+6. Power set on. If the mod was done correctly, the picture will be darker than usual. Recalibrate SCREEN and FOCUS, and adjust colors if necessary.
 
 If you don't have an oscilloscope (which accurately describes 90% of electronics hobbyists), you can probe for negative voltages with a capacitor and diode. Here's how to do it:
 
 ![](probe.jpg)
+
+It is **optional, but strongly recommended** to add a 1M ohm resistor across the capacitor so that it quickly discharges after high voltage has been applied to it. If you don't add the resistor, then beware that capacitor can hold a nasty voltage for several minutes after power has been disconnected.
 
 Further resources to check:
 * The [HR Diemen database](https://www.hrdiemen.com/search/index) lists many CRT displays and their flybacks. You might be able to find some useful info here, but don't count on it because **the HR Diemen database is known to be horribly wrong**.
