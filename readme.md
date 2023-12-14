@@ -32,10 +32,13 @@ the G2 (SCREEN) and G3 (FOCUS) voltages can vary between tubes. The result will 
 too high) or out of focus (G3 voltage not exact). The usual way to hack around this is by adjusting the B+ voltage, but this
 can cause the chassis to run too hot, or possibly cause cathode poisoning if the voltages dip too low.
 
-Most displays, however, do not use the G1 pin. This is the control grid, and on almost all consumer-grade equipment,
-it is tied to ground (i.e., 0 volts), allowing the electron guns to fire directly at the screen. If a negative voltage is placed on G1,
-then it will limit how many electrons strike the screen. While this will make the screen darker, it also allows us to fine-tune
-the SCREEN and FOCUS values.
+The CRT, being a vacuum tube, emits electrons from its cathodes before they are accelerated towards the screen at near light speed.
+Before that happens, there are several grids used to focus the beam. Similar to the tetrode and other multi-grid tubes, CRTs have a
+control grid on the G1 pin which is used to limit the flow of electrons into the next two grids. Most displays, however, do not use
+the G1 pin, and simply tie it to ground (i.e., 0 volts), allowing electrons to fire at the screen in an unrestricted manner.
+If a negative voltage is placed on G1, then it will limit how many electrons strike the screen. While this will make the screen darker,
+it also allows us to fine-tune the SCREEN and FOCUS values, and, as a bonus, we can create a much tighter focused electron beam,
+resulting in a sharper and more vivid picture.
 
 It just so happens that many displays have large negative voltages present on their flyback transformer, but they can't be fed
 directly to the G1 pin because it won't be stable (or even safe). So, it's time to fix that.
@@ -66,6 +69,9 @@ The basic circuit consists of:
 * D1: Plain ol' 1 amp general purpose diode (SMC package). I use Schottkys to keep the voltage drop low.
 
 Optionally, you can add a potential divider across R1 and R2 (both SMD 2512s). However, most TVs will output voltages that won't need a potential divider, so g1 crymax lite is your best bet.
+
+It's very important to note that this circuit does nothing to protect against overvoltage. However, it's safe enough for most purposes. If there are overvoltage and arcing
+issues with this mod, add a spark gap between ground and the G1 output. I was thinking of using a zener for this purpose but zeners are not reliable enough.
 
 **Remember to select your components with tolerances in mind!** The Gerbers use chunky components for a good reason.
 
