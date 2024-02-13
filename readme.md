@@ -82,7 +82,7 @@ issues with this mod, add a spark gap between ground and the G1 output. I was th
 1. Open your display and look at the neckboard. If the G1 pin isn't going to ground, then your display already feeds negative voltage to G1 and there's no point doing this mod.
 2. Probe voltages coming off the flyback _that are not B+_ until you find something within a safe limit. If you can't find one, you'll have to use a potential divider to knock the voltage down to something usable, or generate a negative voltage some other way.
 3. Assemble the circuit from the given Gerbers and BOM listed above.
-4. Isolate the G1 pin from ground by cutting the board with an Inexacto Knife (i.e., boxcutter) or similar. Make sure that G1 is the only thing you isolate from ground, because other signals may be routed through that ground trace.
+4. Isolate the G1 pin from ground by cutting the board with an Inexacto Knife (i.e., boxcutter) or similar. Make sure that G1 is the only thing you isolate from ground, because other signals may be routed through that ground trace. **Beware that some CRT sockets will internally ground the G1 pin.**
 5. Run wires as appropriate.
 6. Power set on. If the mod was done correctly, the picture will be darker than usual. Recalibrate SCREEN and FOCUS, and adjust colors if necessary.
 

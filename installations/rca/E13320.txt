@@ -1,0 +1,21 @@
+G1 Crymax installlog for RCA E13320, chassis rev. TX808H
+Probably one of the nicest 13" TVs you can get
+
+Tube is a 37GDA86X
+Neck pin 6 is G1
+Assuming -50VDC safe limit
+
+Anode of diode DL45 (next to flyback) measured -200VDC
+
+****      CRT SOCKET SHORTS PIN 6 TO GROUND       ****
+**** ATTEMPT THE FOLLOWING HACK AT YOUR OWN RISK  *****
+
+Lifted socket pin 2 from ground (probably defeating overvoltage protection on focus wire in the process)
+Pin 6 now isolated from ground
+
+Using 330k/100k voltage divider with extra diode to enforce polarity on the voltage divider
+
+Measured approx. -46VDC at G1 pin
+
+Job done
+
