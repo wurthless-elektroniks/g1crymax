@@ -71,9 +71,19 @@ The basic circuit consists of:
 Optionally, you can add a potential divider across R1 and R2 (both SMD 2512s). However, most TVs will output voltages that won't need a potential divider, so g1 crymax lite is your best bet.
 
 It's very important to note that this circuit does nothing to protect against overvoltage. However, it's safe enough for most purposes. If there are overvoltage and arcing
-issues with this mod, add a spark gap between ground and the G1 output. I was thinking of using a zener for this purpose but zeners are not reliable enough.
+issues with this mod, add a spark gap between ground and the G1 output. ~~I was thinking of using a zener for this purpose but zeners are not reliable enough.~~ You can also put a zener across C1 to cap the voltage at something reasonable.
 
 **Remember to select your components with tolerances in mind!** The Gerbers use chunky components for a good reason.
+
+## Before you start modding: Where's the G1 pin?
+
+**CR-23 (fat neck): pin 5**
+
+![](g1pin_cr23.jpg)
+
+**CR-31 (thin neck): pin 6 (at 12 o'clock)**
+
+![](g1pin_cr31.jpg)
 
 ## Installation procedure
 
